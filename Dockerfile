@@ -29,7 +29,7 @@ RUN useradd nginx --system --uid 666  --home-dir /usr/share/nginx --no-create-ho
 
 # Update
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 
 #Install deps
 RUN apt-get install -y \
