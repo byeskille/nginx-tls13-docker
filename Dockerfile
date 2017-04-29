@@ -82,7 +82,7 @@ RUN make && \
     make install
 
 # Make sure the permissions are set correctly on our webroot, logdir and pidfile so that we can run the webserver as non-root.
-RUN chown -R nginx:nginx /usr/share/nginx && \
+RUN chown -R nginx:nginx /etc/nginx && \
     chown -R nginx:nginx /var/log/nginx && \
     mkdir -p /var/cache/nginx/ && \
     chown -R nginx:nginx /var/cache/nginx/ && \
