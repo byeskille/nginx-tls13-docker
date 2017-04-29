@@ -81,6 +81,9 @@ RUN ./configure --prefix=/etc/nginx --sbin-path=/usr/sbin/nginx --modules-path=/
 RUN make && \
     make install
 
+#Purge dependencies used during building from source
+RUN apt-get purge -y --auto-remove wget git gcc make
+
 # Make sure the permissions are set correctly on our webroot, logdir and pidfile so that we can run the webserver as non-root.
 RUN chown -R nginx:nginx /etc/nginx && \
     chown -R nginx:nginx /var/log/nginx && \
