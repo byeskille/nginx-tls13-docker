@@ -41,10 +41,7 @@ RUN apt-get install -y \
 # Get sources into container, verify, compile and install - purge after
 RUN apt-get install -y wget git gcc make && \
     wget https://nginx.org/download/nginx-$NGXVERSION.tar.gz && \
-    git clone https://github.com/openssl/openssl && \
-    cd openssl && \
-    git checkout tls1.3-draft-18 && \
-    cd ~ && \
+    git clone -b tls1.3-draft-18 --single-branch https://github.com/openssl/openssl && \
     gpg --keyserver keyserver.ubuntu.com --recv-keys $NGXSIGKEY && \
     wget "https://nginx.org/download/nginx-$NGXVERSION.tar.gz.asc" && \
     out=$(gpg --status-fd 1 --verify "nginx-$NGXVERSION.tar.gz.asc" 2>/dev/null) && \
