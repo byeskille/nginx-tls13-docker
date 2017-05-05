@@ -11,9 +11,6 @@ MAINTAINER Øyvind Bye Skille <oyvind@byeskille.no>
 ENV NGXVERSION 1.13.0
 ENV NGXSIGKEY B0F4253373F8F6F510D42178520A9993A1C052F8
 
-# PageSpeed Version (See: https://modpagespeed.com/doc/release_notes)
-ENV PSPDVER latest-beta
-
 # OpenSSL Version (See: https://www.openssl.org/source/)
 ENV OSSLVER 1.1.1-dev
 ENV OSSLSIGKEY 0E604491
