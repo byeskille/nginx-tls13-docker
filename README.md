@@ -2,6 +2,7 @@
 
 A simple Docker container compiling [Nginx](http://nginx.org/en/download.html) from source together with [Openssl](https://github.com/openssl/openssl/tree/tls1.3-draft-18) from the the latest code on Github and the branch supporting TLS 1.3 draft 18.
 
+Size of built image: 225 MB
 
 ### Usage
 
