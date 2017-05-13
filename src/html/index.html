@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="styles.css" rel="stylesheet">
+<title>TLS 1.3 experiment – tls13.byeskille.no</title>
+<style>
+    body {
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<div class="reportContent good" id="section_www_tls" style="display: block;">
+<h1>TLS 1.3 experiment - tls13.byeskille.no</h1>
+<p>If you see this page, a <a href="http://nginx.org/en/download.html">nginx</a> web server is successfully installed and
+working together with <a href="https://github.com/openssl/openssl/tree/tls1.3-draft-18">openssl 1.1.1-dev</a> supporting TLS 1.3 draft 18.</p>
+
+<p>The experiment is running in a Docker container with nginx and openssl compiled from source by <a href="https://byeskille.no">Oyvind Bye Skille</a>.</p>
+
+<table>
+    <tbody>
+
+    <tr>
+        <td class="label ttip"><span class="tip">Encryption protocol version determines what features are<br>
+                                    available for negotiation between client and server.</span>Supported protocols
+        </td>
+        <td class="wrap">                            <span class="cgood">TLS v1.3 (d18)</span>
+            <br>
+                                    <span class="cgood">TLS v1.2</span>
+            <br>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="label ttip"><span class="tip">Servers should always enforce their own cipher<br>
+                                    suite preference, as that is the only approach<br>
+                                    that guarantees that the best possible suite is<br>
+                                    selected.</span>Cipher
+            suite preference
+        </td>
+        <td class="wrap">            <i class="fa fa-check good"></i>        </td>
+    </tr>
+                <tr>
+            <td class="label ttip"><span class="tip">Shows cipher suite configuration for this protocol version.</span>TLS v1.3 (d18)
+                                                            <br><span class="smallGrey">Server preference</span>
+                                                </td>
+            <td class="wrap">
+                                    <span class="ttip"><span class="tip">
+                                    Suite: TLS_CHACHA20_POLY1305_SHA256
+                        <br>
+                                    Suite ID: 0x1303<br>
+            Cipher name: CHACHA20
+                        <br>
+            Cipher strength: 256 bits
+                                                            <br>
+                                    Cipher mode: AEAD<br>
+                                    Forward secrecy: Yes<br>
+            PRF: SHA256<br>
+                                </span>
+                                                    <span class="cgood">TLS_CHACHA20_POLY1305_SHA256</span>
+                                </span>
+                    <span class="smallGrey">
+                                &nbsp;256 bits
+                        </span><br>
+                                    <span class="ttip"><span class="tip">
+                                    Suite: TLS_AES_128_GCM_SHA256
+                        <br>
+                                    Suite ID: 0x1301<br>
+            Cipher name: AES
+                        <br>
+            Cipher strength: 128 bits
+                                                            <br>
+                                                    Cipher block size: 128 bits
+                                                        <br>
+                                    Cipher mode: AEAD<br>
+                                    Forward secrecy: Yes<br>
+            PRF: SHA256<br>
+                                </span>
+                                                    <span class="cgood">TLS_AES_128_GCM_SHA256</span>
+                                </span>
+                    <span class="smallGrey">
+                                &nbsp;128 bits
+                        </span><br>
+                                    <span class="ttip"><span class="tip">
+                                    Suite: TLS_AES_256_GCM_SHA384
+                        <br>
+                                    Suite ID: 0x1302<br>
+            Cipher name: AES
+                        <br>
+            Cipher strength: 256 bits
+                                                            <br>
+                                                    Cipher block size: 128 bits
+                                                        <br>
+                                    Cipher mode: AEAD<br>
+                                    Forward secrecy: Yes<br>
+            PRF: SHA384<br>
+                                </span>
+                                                    <span class="cgood">TLS_AES_256_GCM_SHA384</span>
+                                </span>
+                    <span class="smallGrey">
+                                &nbsp;256 bits
+                        </span><br>
+                </td>
+        </tr>
+                <tr>
+            <td class="label ttip"><span class="tip">Shows cipher suite configuration for this protocol version.</span>TLS v1.2
+                                                            <br><span class="smallGrey">Server preference</span>
+                                                </td>
+            <td class="wrap">
+                                    <span class="ttip"><span class="tip">
+                                    Suite: TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+                        <br>
+                                    Suite ID: 0xc02c<br>
+            Cipher name: AES
+                        <br>
+            Cipher strength: 256 bits
+                                                            <br>
+                                                    Cipher block size: 128 bits
+                                                        <br>
+                                    Cipher mode: AEAD<br>
+                                                    Key exchange: ECDHE_ECDSA<br>
+            Key exchange strength:                                                                                                 EC ecdh_x25519 (256 bits)
+                                                                                                                    <br>
+                                    Forward secrecy: Yes<br>
+            PRF: SHA384<br>
+                                </span>
+                                                    <span class="cgood">TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</span>
+                                </span>
+                    <span class="smallGrey">
+                                &nbsp;256 bits
+                                                                                    (ECDHE 256 bits)
+                                                    </span><br>
+                                    <span class="ttip"><span class="tip">
+                                    Suite: TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
+                        <br>
+                                    Suite ID: 0xcca9<br>
+            Cipher name: CHACHA20
+                        <br>
+            Cipher strength: 256 bits
+                                                            <br>
+                                    Cipher mode: AEAD<br>
+                                                    Key exchange: ECDHE_ECDSA<br>
+            Key exchange strength:                                                                                                 EC ecdh_x25519 (256 bits)
+                                                                                                                    <br>
+                                    Forward secrecy: Yes<br>
+            PRF: SHA256<br>
+                                </span>
+                                                    <span class="cgood">TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256</span>
+                                </span>
+                    <span class="smallGrey">
+                                &nbsp;256 bits
+                                                                                    (ECDHE 256 bits)
+                                                    </span><br>
+                                    <span class="ttip"><span class="tip">
+                                    Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+                        <br>
+                                    Suite ID: 0xc02b<br>
+            Cipher name: AES
+                        <br>
+            Cipher strength: 128 bits
+                                                            <br>
+                                                    Cipher block size: 128 bits
+                                                        <br>
+                                    Cipher mode: AEAD<br>
+                                                    Key exchange: ECDHE_ECDSA<br>
+            Key exchange strength:                                                                                                 EC ecdh_x25519 (256 bits)
+                                                                                                                    <br>
+                                    Forward secrecy: Yes<br>
+            PRF: SHA256<br>
+                                </span>
+                                                    <span class="cgood">TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</span>
+                                </span>
+                    <span class="smallGrey">
+                                &nbsp;128 bits
+                                                                                    (ECDHE 256 bits)
+                                                    </span><br>
+                                    <span class="ttip"><span class="tip">
+                                    Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+                        <br>
+                                    Suite ID: 0xc024<br>
+            Cipher name: AES
+                        <br>
+            Cipher strength: 256 bits
+                                                            <br>
+                                                    Cipher block size: 128 bits
+                                                        <br>
+                                    Cipher mode: CBC<br>
+                                                    Key exchange: ECDHE_ECDSA<br>
+            Key exchange strength:                                                                                                 EC ecdh_x25519 (256 bits)
+                                                                                                                    <br>
+                                    Forward secrecy: Yes<br>
+            PRF: SHA384<br>
+                                </span>
+                                                    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+                                </span>
+                    <span class="smallGrey">
+                                &nbsp;256 bits
+                                                                                    (ECDHE 256 bits)
+                                                    </span><br>
+                                    <span class="ttip"><span class="tip">
+                                    Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+                        <br>
+                                    Suite ID: 0xc023<br>
+            Cipher name: AES
+                        <br>
+            Cipher strength: 128 bits
+                                                            <br>
+                                                    Cipher block size: 128 bits
+                                                        <br>
+                                    Cipher mode: CBC<br>
+                                                    Key exchange: ECDHE_ECDSA<br>
+            Key exchange strength:                                                                                                 EC ecdh_x25519 (256 bits)
+                                                                                                                    <br>
+                                    Forward secrecy: Yes<br>
+            PRF: SHA256<br>
+                                </span>
+                                                    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+                                </span>
+                    <span class="smallGrey">
+                                &nbsp;128 bits
+                                                                                    (ECDHE 256 bits)
+                                                    </span><br>
+                                    <span class="ttip"><span class="tip">
+                                    Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+                        <br>
+                                    Suite ID: 0xc00a<br>
+            Cipher name: AES
+                        <br>
+            Cipher strength: 256 bits
+                                                            <br>
+                                                    Cipher block size: 128 bits
+                                                        <br>
+                                    Cipher mode: CBC<br>
+                                                    Key exchange: ECDHE_ECDSA<br>
+            Key exchange strength:                                                                                                 EC ecdh_x25519 (256 bits)
+                                                                                                                    <br>
+                                    Forward secrecy: Yes<br>
+            PRF: SHA<br>
+                                </span>
+                                                    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+                                </span>
+                    <span class="smallGrey">
+                                &nbsp;256 bits
+                                                                                    (ECDHE 256 bits)
+                                                    </span><br>
+                                    <span class="ttip"><span class="tip">
+                                    Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+                        <br>
+                                    Suite ID: 0xc009<br>
+            Cipher name: AES
+                        <br>
+            Cipher strength: 128 bits
+                                                            <br>
+                                                    Cipher block size: 128 bits
+                                                        <br>
+                                    Cipher mode: CBC<br>
+                                                    Key exchange: ECDHE_ECDSA<br>
+            Key exchange strength:                                                                                                 EC ecdh_x25519 (256 bits)
+                                                                                                                    <br>
+                                    Forward secrecy: Yes<br>
+            PRF: SHA<br>
+                                </span>
+                                                    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+                                </span>
+                    <span class="smallGrey">
+                                &nbsp;128 bits
+                                                                                    (ECDHE 256 bits)
+                                                    </span><br>
+                </td>
+        </tr>
+
+    </tbody>
+</table>
+
+<p>The table above originates from the <a href="https://www.hardenize.com">Hardenize</a> test tool.</p>
+
+<p>The Dockerfile will shared in this Github repo eventually
+<a href="https://github.com/byeskille/nginx-tls13-docker">nginx-tls13-docker</a>.<br/>
+Questions can be sent to
+<a href="https://byeskille.no/kontakt">Oyvind Bye Skille</a>.</p>
+
+<p><em>Thanks for your visit!</em></p>
+</div>
+</body>
+</html>
