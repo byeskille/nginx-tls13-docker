@@ -24,9 +24,11 @@ WORKDIR /root
 # Add 'nginx' user
 RUN useradd nginx --system --uid 666  --home-dir /etc/nginx --no-create-home --shell /sbin/nologin
 
-# Update
-RUN apt-get update
-RUN apt-get upgrade -y
+# Update and upgrade
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get autoclean && \
+    apt-get autoremove
 
 #Install deps
 RUN apt-get install -y \
