@@ -21,8 +21,8 @@ WORKDIR /root
 
 ## not in
 
-# Add 'www-data' user
-RUN useradd www-data --system --uid 666  --home-dir /etc/nginx --no-create-home --shell /sbin/nologin
+# Mod 'www-data' user
+RUN usermod www-data  --home /etc/nginx --shell /sbin/nologin
 
 # Update and upgrade
 RUN apt-get update && \
