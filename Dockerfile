@@ -21,8 +21,8 @@ WORKDIR /root
 
 ## not in
 
-# Add 'nginx' user
-RUN useradd nginx --system --uid 666  --home-dir /etc/nginx --no-create-home --shell /sbin/nologin
+# Add 'www-data' user
+RUN useradd www-data --system --uid 666  --home-dir /etc/nginx --no-create-home --shell /sbin/nologin
 
 # Update and upgrade
 RUN apt-get update && \
@@ -58,21 +58,21 @@ RUN apt-get install -y wget git gcc make && \
 
 
 # Make sure the permissions are set correctly on our webroot, logdir and pidfile so that we can run the webserver as non-root.
-RUN chown -R nginx:nginx /etc/nginx && \
-    chown -R nginx:nginx /var/log/nginx && \
+RUN chown -R www-data:www-data /etc/nginx && \
+    chown -R www-data:www-data /var/log/nginx && \
     mkdir -p /var/cache/nginx/ && \
-    chown -R nginx:nginx /var/cache/nginx/ && \
+    chown -R www-data:www-data /var/cache/nginx/ && \
     touch /run/nginx.pid && \
-    chown -R nginx:nginx /run/nginx.pid
+    chown -R www-data:www-data /run/nginx.pid
 
 # Configure nginx to listen on 8080 instead of 80 (we can't bind to <1024 as non-root)
-RUN perl -pi -e 's,80;,8080;,' /etc/nginx/nginx.conf
+#RUN perl -pi -e 's,80;,8080;,' /etc/nginx/nginx.conf
 
 # Print built version
 RUN nginx -V
 
 # Launch Nginx in container as non-root
-USER nginx
+USER www-data
 WORKDIR /etc/nginx
 
 # Launch command
