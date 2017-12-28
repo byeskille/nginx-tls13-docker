@@ -8,7 +8,7 @@ FROM ubuntu:16.04
 MAINTAINER Øyvind Bye Skille <oyvind@byeskille.no>
 
 # Nginx Version (See: https://nginx.org/en/CHANGES)
-ENV NGXVERSION 1.13.7
+ENV NGXVERSION 1.13.8
 ENV NGXSIGKEY B0F4253373F8F6F510D42178520A9993A1C052F8
 
 # OpenSSL Version (See: https://www.openssl.org/source/)
