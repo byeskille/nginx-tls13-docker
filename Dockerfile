@@ -12,7 +12,7 @@ ENV NGXVERSION 1.13.10
 ENV NGXSIGKEY B0F4253373F8F6F510D42178520A9993A1C052F8
 
 # OpenSSL Version (See: https://www.openssl.org/source/)
-ENV OSSLVER 1.1.1-dev
+ENV OSSLVER 1.1.1-pre4-dev
 ENV OSSLSIGKEY 0E604491
 
 # Build as root (we drop privileges later when actually running the container)
