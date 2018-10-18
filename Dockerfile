@@ -12,7 +12,7 @@ ENV NGXVERSION 1.15.5
 ENV NGXSIGKEY B0F4253373F8F6F510D42178520A9993A1C052F8
 
 # OpenSSL Version (See: https://www.openssl.org/source/)
-ENV OSSLVER 1.1.1-pre9-dev
+ENV OSSLVER 1.1.1a-dev
 ENV OSSLSIGKEY 0E604491
 
 # Build as root (we drop privileges later when actually running the container)
@@ -40,7 +40,7 @@ RUN apt-get install -y \
 # Get sources into container, verify, compile and install - purge after
 RUN apt-get install -y wget git gcc make && \
     wget https://nginx.org/download/nginx-$NGXVERSION.tar.gz && \
-    git clone -b master --single-branch https://github.com/openssl/openssl && \
+    git clone -b OpenSSL_1_1_1-stable --single-branch https://github.com/openssl/openssl && \
     wget https://nginx.org/download/nginx-$NGXVERSION.tar.gz.asc && \
     gpg --keyserver keyserver.ubuntu.com --recv-keys $NGXSIGKEY && \
     out=$(gpg --status-fd 1 --verify "nginx-$NGXVERSION.tar.gz.asc" 2>/dev/null) && \
