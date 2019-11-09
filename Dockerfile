@@ -2,7 +2,7 @@
 #
 #        docker build -t nginx .
 #        docker run --cap-drop=all --name nginx -d -p 80:8080 nginx
-#
+#**deprecated:** This repo is not updated at all anymore. Ubuntu 18.04 with nginx from the official repos now support TLS 1.3 out of the box. And that is more recommended even for experimentation.
 
 FROM ubuntu:16.04
 MAINTAINER Øyvind Bye Skille <oyvind@byeskille.no>
