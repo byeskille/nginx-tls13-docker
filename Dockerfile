@@ -2,7 +2,7 @@
 #
 #        docker build -t nginx .
 #        docker run --cap-drop=all --name nginx -d -p 80:8080 nginx
-#
+# IMPORTANT: This is deprecated 
 
 FROM ubuntu:16.04
 MAINTAINER Øyvind Bye Skille <oyvind@byeskille.no>
